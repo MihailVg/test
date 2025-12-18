@@ -6,13 +6,22 @@
 		"lint": "eslint src/**/*.ts"
 	},
 	"dependencies": {
+		"@typegoose/typegoose": "^12.20.0",
+		"bcrypt": "^6.0.0",
+		"cookie-parser": "^1.4.7",
+		"csurf": "^1.11.0",
 		"dotenv": "^17.2.3",
 		"express": "^5.2.1",
-		"mongoose": "^9.0.1"
+		"express-session": "^1.18.2",
+		"jsonwebtoken": "^9.0.3",
+		"mongoose": "^8.13.0"
 	},
 	"devDependencies": {
+		"@types/bcrypt": "^6.0.0",
+		"@types/cookie-parser": "^1.4.10",
 		"@types/dotenv": "^6.1.1",
 		"@types/express": "^5.0.6",
+		"@types/express-session": "^1.18.2",
 		"@types/node": "^25.0.2",
 		"@typescript-eslint/eslint-plugin": "^8.50.0",
 		"@typescript-eslint/parser": "^8.50.0",
