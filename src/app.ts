@@ -4,10 +4,19 @@ import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import authRoutes from './routes/auth.routes'
+import todoRoutes from './routes/todo.routes'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
+
+const corsOptions = {
+	origin: process.env.FRONTEND_URL,
+	credentials: true,
+}
+
+app.use(cors(corsOptions))
 
 app.use(cookieParser())
 app.use(express.json())
@@ -35,5 +44,6 @@ app.use(session(sessionConfig))
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/')
 
 app.use('/api/auth', authRoutes);
+app.use('/api/todos', todoRoutes)
 
 export default app
