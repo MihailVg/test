@@ -46,7 +46,7 @@ export const me = async (req: Request, res: Response) => {
 		return res.status(401).json({ error: 'Not authenticated' })
 	}
 	const user = await UserModel.findById(req.session.userId).select(
-		'-passwordHash'
+		'-passwordHash -__v'
 	)
 	if (!user) {
 		return res.status(404).json({ error: 'User not found' })
