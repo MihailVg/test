@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import authRoutes from './routes/auth.routes'
 import todoRoutes from './routes/todo.routes'
+import categoryRoutes from './routes/category.routes'
 import cors from 'cors'
 
 dotenv.config()
@@ -43,7 +44,8 @@ app.use(session(sessionConfig))
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/')
 
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes)
 app.use('/api/todos', todoRoutes)
+app.use('/api/categories', categoryRoutes)
 
 export default app
